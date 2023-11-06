@@ -96,7 +96,6 @@ const youtubeVideos = [
 const Utils = {
     displayVideos: function() {
         const isFeatured = document.querySelector('#featuredCheckbox').checked;
-        
         Utils.clearItemList();
 
         let filteredVideos = youtubeVideos;
@@ -110,7 +109,7 @@ const Utils = {
     },
 
 
-    displayFeaturedVideos: function(el) {
+    displayFeaturedVideos: function(el, featured) {
         const itemList = document.querySelector(el);
         const header = document.createElement('h3');
         header.textContent = "Featured Videos";
@@ -159,13 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
     Utils.displayVideos();
 });
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    Utils.displayAllVideos('#itemListVideos');
-
-    document.querySelector('#featuredCheckbox').addEventListener('change', Utils.displayVideos);
-});
 
 
 
