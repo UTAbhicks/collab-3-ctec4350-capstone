@@ -99,15 +99,16 @@ const Utils = {
         
         Utils.clearItemList();
 
-        // this is a simple reference to all of the youtube videos above; 
         let filteredVideos = youtubeVideos;
 
-        /* TODO
-        - if isFeatured is true, meaning that the checkbox is checked, then display only the featured videos
-        - otherwise, display all videos
-        */
-       
+        if (isFeatured) {
+            filteredVideos = Utils.filterByViewsPercentage(youtubeVideos);
+            Utils.displayFeaturedVideos('#itemListVideos', filteredVideos);
+        } else {
+            Utils.displayAllVideos('#itemListVideos');
+        }
     },
+
 
     displayFeaturedVideos: function(el) {
         
