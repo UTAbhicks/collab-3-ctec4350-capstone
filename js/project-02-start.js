@@ -144,18 +144,22 @@ const Utils = {
         });
     },
 
-    /* TODO
-        Create a method called filterByViewsPercentage
-
-        This method should accept an array of videos as an argument and return a new array of videos that meet the following criteria:
-        - The video has a number of views that is greater than or equal to 5% of the total number of views of all videos in the array
-    
-        Return the new array of videos that meet the criteria
-        Hint: You will use the filter method to do this
-    */
-
-   
+    filterByViewsPercentage: function(videos) {
+        const totalViews = videos.reduce((total, video) => total + video.views, 0);
+        return videos.filter(video => (video.views / totalViews) * 100 >= 5);
+    },
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    Utils.displayAllVideos('#itemListVideos');
+
+    document.querySelector('#featuredCheckbox').addEventListener('change', Utils.displayVideos);
+    
+    // Call Utils.displayVideos initially to set the correct video list
+    Utils.displayVideos();
+});
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     Utils.displayAllVideos('#itemListVideos');
