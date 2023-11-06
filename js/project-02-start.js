@@ -111,14 +111,6 @@ const Utils = {
 
 
     displayFeaturedVideos: function(el) {
-        
-        /* TODO
-        
-        Create a variable called featured and assign it the value of the result of calling the filterByViewsPercentage method
-        
-        */
-
-
         const itemList = document.querySelector(el);
         const header = document.createElement('h3');
         header.textContent = "Featured Videos";
@@ -133,7 +125,7 @@ const Utils = {
 
     clearItemList: function() {        
         const itemList = document.getElementById('itemListVideos');
-        itemList.innerHTML = '';  // Clear the list
+        itemList.innerHTML = '';
     },
 
     
