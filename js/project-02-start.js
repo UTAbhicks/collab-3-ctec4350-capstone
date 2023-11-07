@@ -144,8 +144,9 @@ const Utils = {
     },
 
     filterByViewsPercentage: function(videos) {
+        const threshold = 5;
         const totalViews = videos.reduce((total, video) => total + video.views, 0);
-        return videos.filter(video => (video.views / totalViews) * 100 >= 5);
+        return videos.filter(video => (video.views / totalViews) * 100 >=  threshold);
     },
 };
 
