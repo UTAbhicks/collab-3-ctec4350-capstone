@@ -64,8 +64,8 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     border: 3px solid darkcyan;
     border-radius: 4px;
     margin-right: 5px;
@@ -75,7 +75,7 @@
 .input-cb input[type="checkbox"]:checked::before,
 .input-cb input[type="radio"]:checked::before {
     content: '\2713'; 
-    font-size: 16px;
+    font-size: 30px;
     color: #007bff;
     position: absolute;
     top: 50%;
